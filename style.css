@@ -1,0 +1,238 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin-bottom: 15px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+#searchInput {
+    width: 90%;
+    max-width: 500px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+}
+
+#searchInput:focus {
+    border-color: #3498db;
+}
+
+/* Masonry Layout */
+
+.gallery {
+    column-count: 4;
+    column-gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Info */
+
+.image-info {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Loader */
+
+.loader {
+    text-align: center;
+    padding: 30px;
+    display: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error Message */
+
+.error-message {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    padding: 20px;
+}
+
+/* Lightbox */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+}
+
+/* Close Button */
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Navigation Buttons */
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+.left {
+    left: 20px;
+}
+
+.right {
+    right: 20px;
+}
+
+/* Infinite Scroll Trigger */
+
+#sentinel {
+    height: 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+    .gallery {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        column-count: 2;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        column-count: 1;
+    }
+
+    #searchInput {
+        width: 100%;
+    }
+
+    .nav-btn {
+        font-size: 28px;
+        padding: 8px 12px;
+    }
+}
+
+/* Skeleton Loading */
+
+.skeleton {
+    height: 250px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #dddddd 50%,
+        #eeeeee 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        background-position: -200% 0;
+    }
+}
