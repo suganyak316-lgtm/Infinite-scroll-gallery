@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Photo Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Infinite Scroll Photo Gallery</h1>
+
+        <div class="search-container">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search photos..."
+            >
+        </div>
+    </header>
+
+    <main>
+
+        <div id="gallery" class="gallery"></div>
+
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div id="sentinel"></div>
+
+    </main>
+
+    <!-- Lightbox -->
+
+    <div id="lightbox" class="lightbox">
+
+        <button id="closeBtn" class="close-btn">
+            &times;
+        </button>
+
+        <button id="prevBtn" class="nav-btn left">
+            &#10094;
+        </button>
+
+        <img
+            id="lightboxImg"
+            src=""
+            alt="Large Preview"
+        >
+
+        <button id="nextBtn" class="nav-btn right">
+            &#10095;
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
