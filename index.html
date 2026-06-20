@@ -3,58 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infinite Scroll Photo Gallery</title>
+    <title>Infinite Photo Gallery</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>Infinite Scroll Photo Gallery</h1>
-
-        <div class="search-container">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search photos..."
-            >
-        </div>
+        <h1>📸 Infinite Photo Gallery</h1>
+        <p>Explore stunning photos from around the world</p>
     </header>
 
-    <main>
+    <div class="search-container">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search photos..."
+        >
+    </div>
 
-        <div id="gallery" class="gallery"></div>
+    <div id="errorMessage"></div>
 
-        <div id="loader" class="loader">
-            <div class="spinner"></div>
-        </div>
+    <div id="gallery" class="gallery"></div>
 
-        <div id="errorMessage" class="error-message"></div>
+    <div id="loader" class="loader"></div>
 
-        <div id="sentinel"></div>
-
-    </main>
+    <div id="sentinel"></div>
 
     <!-- Lightbox -->
-
     <div id="lightbox" class="lightbox">
 
         <button id="closeBtn" class="close-btn">
-            &times;
+            ✕
         </button>
 
-        <button id="prevBtn" class="nav-btn left">
-            &#10094;
+        <button id="prevBtn" class="nav-btn prev-btn">
+            ❮
         </button>
 
-        <img
-            id="lightboxImg"
-            src=""
-            alt="Large Preview"
-        >
+        <img id="lightboxImg" src="" alt="Preview">
 
-        <button id="nextBtn" class="nav-btn right">
-            &#10095;
+        <button id="nextBtn" class="nav-btn next-btn">
+            ❯
         </button>
 
     </div>
