@@ -59,8 +59,8 @@ async function fetchPhotos() {
         page++;
 
     } catch (error) {
-        errorMessage.textContent =
-            "Error loading photos. Check your internet or API key.";
+      errorMessage.textContent =
+`Error: ${error.message}`;
         console.error(error);
     }
 
